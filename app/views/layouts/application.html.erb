@@ -9,6 +9,60 @@
   </head>
 
   <body>
+    <!-- ナビゲーションバー -->
+    <header class="header">
+      <a class="navbar-brand" href="">
+        Necokaburi
+      </a>
+      <ul class="list-socials hidden-sm-down">
+        <li>
+            <%= link_to image_tag("facebook.png"), 'https://www.facebook.com' %>
+        </li>
+        <li>
+            <%= link_to image_tag("instagram.png"), 'https://www.instagram.com' %>
+        </li>
+        <li>
+            <%= link_to image_tag("twitter.png"), 'https://twitter.com' %>
+        </li>
+      </ul>
+      <span class="scrolldown hidden-sm-down" style="transform: matrix(0, -1, 1, 0, 0, 0); opacity: 0.8;">
+        <span class="txt">
+          <span>←</span>
+          <span>S</span>
+          <span>c</span>
+          <span>r</span>
+          <span>o</span>
+          <span>l</span>
+          <span>l</span>
+        </span>
+
+      </span>
+    </header>
+      <!-- ハンバーガーメニュー -->
+      <!-- ログイン前後でメニューの表示を変更するにはif user_signed_in? => else? -->
+      <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul class="menu-nav" style="list-style:none;">
+              <!-- リンクができたら<%=%>に変える -->
+              <li class="nav-item1">
+                <a class="page-home-link" href="">my page</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-home-link" href="">service</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-home-link" href="">account</a>
+              </li>
+              <li class="nav-item">
+                <a class="page-home-link" href="">sign out</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <!-- end -->
     <%= yield %>
   </body>
 </html>

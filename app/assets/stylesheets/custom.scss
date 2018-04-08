@@ -38,6 +38,7 @@ a {
   background-color: transparent;
 }
 
+
 .list-socials {
   position: fixed;
   z-index: 500;
@@ -53,10 +54,11 @@ a {
   vertical-align: middle;
 }
 
-.list-socials li a {
+.list-socials li {
   height: 25px;
   width: 25px;
   line-height: 25px;
+  padding: 10px 0px;
   display: block;
   text-align: center;
 }
@@ -177,5 +179,17 @@ a {
 
 .box {
   display: block;
-  padding: 210px 0px;
+  padding: 200px 0px;
+}
+
+.box2 {
+  padding-top: 200px;
+}
+
+.about {
+  font-size: 1rem;
+}
+
+.box3 {
+  float: right;
 }
