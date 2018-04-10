@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  font-size: 1.618rem;
+  font-size: 32px;
   font-family: "Verdana";
   color: #000;
   min-height: 100vh;
@@ -21,7 +21,7 @@ body {
   left: 40px;
   margin: 0px;
   color: inherit;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 a .navbar-brand {
@@ -29,7 +29,6 @@ a .navbar-brand {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
 }
 
 a {
@@ -58,7 +57,7 @@ a {
   height: 25px;
   width: 25px;
   line-height: 25px;
-  padding: 10px 0px;
+  padding: 20px 0px;
   display: block;
   text-align: center;
 }
@@ -174,22 +173,68 @@ a {
 
 .container {
   width: 95%;
-  float: right;
+  text-align: center;
 }
 
 .box {
   display: block;
-  padding: 200px 0px;
+  font-size: 6rem;
+  padding: 230px 0px;
 }
 
 .box2 {
   padding-top: 200px;
+  font-size: 3rem;
 }
 
 .about {
-  font-size: 1rem;
+  padding-bottom: 100px;
+  font-size: 2rem;
 }
 
 .box3 {
-  float: right;
+  padding-bottom: 200px;
+  font-size: 3rem;
+}
+
+.container .box4 {
+  padding-bottom: 50px;
+  font-size: 3rem;
+}
+
+.form-group {
+  font-size: 1rem;
+}
+
+.text-color {
+  color: black;
+  font-size: 2rem;
+  border: 1px solid black;
+  padding: 10px 76px;
+  &:hover{
+  color: #efefef;
+  text-decoration: none;
+  }
+}
+
+.btn-color {
+  color: black;
+  border: 1px solid black;
+  padding: 10px 70px;
+  font-size: 2rem;
+  background-color: rgba(0,0,0,0.0);
+  &:hover {
+  color: #efefef;
+  }
+}
+
+.label-color {
+  color: black;
+  font-size: 1rem;
+}
+
+.form-control {
+  margin-left: 30%;
+  height: 1.6%;
+  width: 40%;
 }

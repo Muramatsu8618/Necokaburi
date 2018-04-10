@@ -1,1 +1,45 @@
-<p>aaa</p>
+<div class="container">
+  <h2 class="box4">Create your Necokaburi Account</h2>
+  <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.label :name, class: 'label-color' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, class: 'label-color' %>
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, class: 'label-color' %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: 'label-color' %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :birthday, class: 'label-color' %><br>
+          <%= f.date_select(
+            :birthday,
+            use_month_numbers: true,
+            start_year: 1945,
+            end_year: (Time.now.year),
+            default: Date.new(1989, 1, 1),
+            date_separater: '/', class: 'form-control') %>
+        </div>
+        <div class="form-group">
+          <%= f.label :gender, class: 'label-color' %><br>
+          <%= f.select :gender, [["男", "1"],["女", "2"]], class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, class: 'label-color' %><br>
+          <%= f.telephone_field :phone, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :address, class: 'label-color' %><br>
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+        <%= f.submit "register", class: 'btn btn-color' %>
+  <% end %>
+  <%= link_to 'sign in', '#', class: 'btn text-color' %>
+</div>
