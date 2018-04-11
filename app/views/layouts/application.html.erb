@@ -11,7 +11,7 @@
   <body>
     <!-- ナビゲーションバー -->
     <header class="header">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="/">
         Necokaburi
       </a>
       <ul class="list-socials hidden-sm-down">
@@ -47,22 +47,41 @@
           <div id="nav-content">
             <ul class="menu-nav" style="list-style:none;">
               <!-- リンクができたら<%=%>に変える -->
-              <li class="nav-item1">
-                <a class="page-home-link" href="">my page</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-home-link" href="">service</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-home-link" href="">account</a>
-              </li>
-              <li class="nav-item">
-                <a class="page-home-link" href="">sign out</a>
-              </li>
+              <% if logged_in? %>
+                <li class="nav-item1">
+                  <a class="page-home-link" href="">my page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-home-link" href="">service</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-home-link" href="">account</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-home-link"><%= link_to sign_out_path, method: :delete do %>Sign out<% end %></a>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <a class="page-home-link"><%= link_to "Sign in", :controller => "sessions", :action => "new" %></a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-home-link"><%= link_to "Sign up", :controller => "users", :action => "new" %></a>
+                </li>
+              <% end %>
             </ul>
           </div>
       </div>
       <!-- end -->
     <%= yield %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
   </body>
 </html>
