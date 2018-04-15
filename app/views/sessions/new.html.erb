@@ -1,6 +1,6 @@
 <div class="container">
   <h3 class="text-center text-white">Sign in</h3>
-    <%= form_for :session, url: "" do |f| %>
+    <%= form_for :session, url: signin_path do |f| %>
       <div class="form-group">
         <%= f.label :email, class: 'label-color' %>
         <%= f.text_field :email, class: 'form-control' %>
@@ -11,5 +11,5 @@
       </div>
         <%= f.submit "sign in", class: 'btn btn-color' %>
     <% end %>
-    <%= link_to 'sign upはこちら', '#', class: 'label-color' %>
+    <div  class="label-color sign-link"><%= link_to "sign upはこちら", :controller => 'users',  :action => 'new' %></div>
 </div>

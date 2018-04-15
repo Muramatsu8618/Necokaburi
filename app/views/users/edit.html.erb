@@ -1,0 +1,41 @@
+
+<div class="container">
+  <h1 class="box4">Update your profile</h1>
+  <div>
+    <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.label :name, class: 'label-color' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email, class: 'label-color' %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password, class: 'label-color' %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirmation", class: 'label-color' %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :phone, class: 'label-color' %>
+          <%= f.telephone_field :phone, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :address, class: 'label-color' %><br>
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+
+        <div class="box5">
+          <%= f.submit "Save changes", class: "btn btn-color" %>
+        </div>
+    <% end %>
+  </div>
+</div>

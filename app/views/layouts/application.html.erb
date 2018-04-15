@@ -52,13 +52,13 @@
                   <a class="page-home-link" href="">my page</a>
                 </li>
                 <li class="nav-item">
-                  <a class="page-home-link" href="">service</a>
+                  <a class="page-home-link" href=""><%= link_to "service", :controller => "pages", :action => "service" %></a>
                 </li>
                 <li class="nav-item">
-                  <a class="page-home-link" href="">account</a>
+                  <a class="page-home-link" href=""><%= link_to "account", :controller => "users", :action => "edit" %></a>
                 </li>
                 <li class="nav-item">
-                  <a class="page-home-link"><%= link_to sign_out_path, method: :delete do %>Sign out<% end %></a>
+                  <a class="page-home-link"><%= link_to signout_path, method: :delete do %>Sign out<% end %></a>
                 </li>
               <% else %>
                 <li class="nav-item">

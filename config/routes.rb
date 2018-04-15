@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   root 'pages#index'
+  get '/service', to: 'pages#service'
 
-  get '/sign_in', to: 'sessions#new'
-  post '/sign_in', to: 'sessions#create'
-  delete '/sign_out', to: 'sessions#destroy'
+  get  '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
 
-  get '/account_create', to: 'users#new'
-  post '/account_create', to: 'users#create'
+  get '/users/edit', to: 'users#edit'
+  patch '/users/edit', to: 'users#update'
 
   resources 'users'
+
+  get '/accountcreate', to: 'users#new'
+  post '/accountcreate', to: 'users#create'
+
 end

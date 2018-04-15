@@ -3,7 +3,13 @@
       <h2 class="box">We will save and share rating of sociality.</h2>
       <h4 class="box2">About us</h4>
       <p class="about">各種シェアリングサービスにおけるあなたの評価を蓄積し、実績を証明することができます</p>
-      <h4 class="box3"><%= link_to "Sign in", :controller => "sessions", :action => "new" %> or <%= link_to "Sign up", :controller => "users", :action => "new" %></h4>
+      <% if logged_in? %>
+        <h4 class="box3">Service</h4>
+        <p class="about">これこれのサービスを利用することができます</p>
+        <p class="about2"><%= link_to "サービス紹介はこちら", :controller => "pages", :action => "service" %></p>
+      <% else %>
+        <div class="box4"><%= link_to "Sign in", :controller => "sessions", :action => "new" %> or <%= link_to "Sign up", :controller => "users", :action => "new" %></div>
+      <% end %>
     </div>
 </body>
 </html>
