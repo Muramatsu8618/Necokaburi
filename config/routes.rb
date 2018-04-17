@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
 
   get '/users/edit', to: 'users#edit'
-  patch '/users/edit', to: 'users#update'
+  post '/users/edit', to: 'users#update'
 
   resources 'users'
 
