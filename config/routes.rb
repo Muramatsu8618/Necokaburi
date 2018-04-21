@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
+
   get '/service', to: 'pages#service'
 
   get  '/signin', to: 'sessions#new'
@@ -7,11 +8,13 @@ Rails.application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
 
   get '/users/edit', to: 'users#edit'
-  post '/users/edit', to: 'users#update'
+  patch '/users/edit', to: 'users#update'
 
   resources 'users'
 
   get '/accountcreate', to: 'users#new'
   post '/accountcreate', to: 'users#create'
+
+  get '/report', to: 'ratings#show'
 
 end

@@ -63,3 +63,7 @@ end
 gem 'bootstrap-sass'
 
 gem 'bcrypt', '~> 3.1.11'
+
+gem 'lazy_high_charts'
+
+gem 'sprockets-rails'

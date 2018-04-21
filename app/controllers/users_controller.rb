@@ -22,8 +22,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash.now[:success] = "アカウント設定を更新しました"
-      redirect_to root_path
+      redirect_to root_path, notice: 'アカウント設定を更新しました'
     else
       flash.now[:alert] = "アカウント設定に失敗しました"
       render :template => "pages/index"
@@ -35,10 +34,10 @@ class UsersController < ApplicationController
     #
     # ActiveRecode::Base.establish_connection(
     #   :adapter => 'mysql2',
-    #   :database =>
+    #   :database => 'necokaburi_development'
     # )
-
-    #   ActiveRecode::User.connection.create_table(table_name)
+    #
+    #   ActiveRecode::Base.connection.create_table(table_name)
     #   table_name = "rating_#{user.id}"
     #     t.integer :user_id
     #     t.integer :totalrate
