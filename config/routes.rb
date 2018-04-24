@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get '/users/edit', to: 'users#edit'
   patch '/users/edit', to: 'users#update'
 
-  resources 'users'
+  # resources 'users'
 
-  get '/accountcreate', to: 'users#new'
-  post '/accountcreate', to: 'users#create'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
 
   get '/report', to: 'ratings#show'
 
