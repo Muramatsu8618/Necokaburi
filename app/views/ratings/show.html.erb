@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="box5">信用残高</h2>
+  <h2 class="box5">信用残高   <%= @all %> pt</h2>
 
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -33,7 +33,7 @@
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         xAxis: {
-            categories: ['<%- @now.ago(8.days) %>', '<%- @now.ago(7.days) %>', '<%= @now.ago(6.days) %>', '<%= @now.ago(5.days) %>', '<%= @now.ago(4.days) %>', '<%= @now.ago(3.days) %>', '<%= @now.ago(2.days) %>', '<%= @now.yesterday %>', '<%= @now %>']
+            categories: ['<%= @ago8.strftime("%Y-%m-%d") %>', '<%= @ago7.strftime("%Y-%m-%d") %>', '<%= @ago6.strftime("%Y-%m-%d") %>', '<%= @ago5.strftime("%Y-%m-%d") %>', '<%= @ago4.strftime("%Y-%m-%d") %>', '<%= @ago3.strftime("%Y-%m-%d") %>', '<%= @ago2.strftime("%Y-%m-%d") %>', '<%= @now.yesterday %>', '<%= @now %>']
         },
         yAxis: {
             title: {
@@ -61,11 +61,10 @@
         },
         series: [{
             name: '残高',
-            data: [ 0, 0, 1, 4, 4, 5, 2, 3, 7]
+            data: [ <%= @sum9 %>+0, <%= @sum8 %>, <%= @sum7 %>, <%= @sum6 %>, <%= @sum5 %>, <%= @sum4 %>, <%= @sum3 %>, <%= @sum2 %>, <%= @sum1 %>]
         }]
     });
     </script>
-
     <h2 class="box5">よく利用するサービス</h2>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>

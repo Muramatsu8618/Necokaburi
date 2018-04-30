@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/users/edit', to: 'users#edit'
   patch '/users/edit', to: 'users#update'
 
-  # resources 'users'
+  resources 'users'
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
